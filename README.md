@@ -1,4 +1,8 @@
-# pwa
+# Something with Vue3
+
+This is a simple Vue3 project (PWA) for learning purpose.
+
+# Original Help for PWA
 
 This template should help get you started developing with Vue 3 in Vite.
 
