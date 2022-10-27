@@ -16,7 +16,7 @@ defineProps<{ type: IconType }>();
 const open = ref(false)
 let posts = reactive( new Array<Post>())
 
-watch(open, async (nv, ov) => {
+watch(open, async (nv) => {
 
   if ( nv === true ) {
 
@@ -52,7 +52,7 @@ watch(open, async (nv, ov) => {
       </div>
       <div class="h-full">
         <div class="h-[90%] overflow-x-hidden overflow-y-scroll p-5">
-          <p v-for="post in posts.values"
+          <p v-for="post in posts.values" :key="(post as Post).id"
               class="mb-3"
           >
             {{ (post as Post).body }}
