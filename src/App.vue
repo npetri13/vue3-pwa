@@ -1,20 +1,23 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
-import InfoButton from "./components/InfoButton.vue";
+import { RouterLink, RouterView } from "vue-router"
+import InfoButton from "./components/InfoButton.vue"
+import { useAppStore } from "./stores/app"
+
+const appModel = useAppStore()
 </script>
 
 <template>
 
   <header class="flex justify-between">
     <div>
-      <h1>An App Name.</h1>
+      <h1>{{ appModel.currentView.title }}</h1>
     </div>
     <div>
       <InfoButton type='blue'/>
     </div>
   </header>
 
-  <main class="py-12 px-4">
+  <main class="px-4 py-12">
     <RouterView />
   </main>
 
