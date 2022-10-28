@@ -17,7 +17,7 @@ const appModel = useAppStore()
     </div>
   </header>
 
-  <main class="px-4 py-12">
+  <main class="py-12">
     <RouterView />
   </main>
 
