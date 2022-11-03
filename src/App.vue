@@ -1,16 +1,19 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { RouterLink, RouterView } from "vue-router"
 import InfoButton from "./components/InfoButton.vue"
-import { useAppStore } from "./stores/app"
 
-const appModel = useAppStore()
+let title = ref('')
+
+const changeTitle = (s: string) => { title.value = s }
+
 </script>
 
 <template>
 
   <header class="flex justify-between">
     <div>
-      <h1>{{ appModel.currentView.title }}</h1>
+      <h1>{{ title }}</h1>
     </div>
     <div>
       <InfoButton type='blue'/>
@@ -18,7 +21,7 @@ const appModel = useAppStore()
   </header>
 
   <main class="py-12">
-    <RouterView />
+    <RouterView @newTitle="changeTitle" />
   </main>
 
   <footer>

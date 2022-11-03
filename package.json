@@ -2,7 +2,7 @@
   "name": "pwa",
   "version": "0.0.0",
   "scripts": {
-    "dev": "concurrently \"vite\" \"npm run rest-server\"",
+    "dev": "concurrently \"npm run rest-server\" \"vite\"",
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "rest-server": "json-server --delay 100 --watch --port 3001 --snapshots ./storage/snapshots ./storage/db.json",
