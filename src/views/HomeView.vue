@@ -1,13 +1,19 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
+import { useAppStore } from "@/stores/app";
+
 type Article = {
   id: Number,
   title: String,
   body: String
 }
 let homeContent = ref<Article>()
+let appModel = useAppStore()
 
 onMounted(() => {
+
+  appModel.viewName = "Home"
+
   fetch("http://localhost:3001/articles/1")
   .then((res) => res.json())
   .then((json) => { homeContent.value = json })

@@ -10,7 +10,9 @@ const appModel = useAppStore()
 
   <header class="flex justify-between">
     <div>
-      <h1>{{ appModel.currentView.title }}</h1>
+      <h1>
+        <span class="font-bold text-blue-500">{{ appModel.title }}</span>
+        <span class="text-slate-500"> >> {{ appModel.viewName }}</span></h1>
     </div>
     <div>
       <InfoButton type='blue'/>
