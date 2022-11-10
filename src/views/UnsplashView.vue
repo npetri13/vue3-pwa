@@ -24,7 +24,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="mb-20">
+  <div class="h-full px-3 overflow-x-hidden overflow-y-auto">
     <h1 class="text-lg">This is the Unsplash View.</h1>
     <div class="flex flex-wrap justify-around py-3">
       <span v-for="url in urls"
