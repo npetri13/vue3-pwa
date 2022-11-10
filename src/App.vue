@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { RouterLink, RouterView } from "vue-router"
-import InfoButton from "./components/InfoButton.vue"
+import { RouterView } from "vue-router"
+import InfoButton from "@/components/InfoButton.vue"
+import Tabs from "@/components/Tabs.vue"
 
 let title = ref('')
 
@@ -25,10 +26,7 @@ const changeTitle = (s: string) => { title.value = s }
   </main>
 
   <footer>
-    <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+    <Tabs/>
   </footer>
   
   </template>

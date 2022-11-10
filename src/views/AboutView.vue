@@ -2,12 +2,12 @@
 import { onMounted } from 'vue';
 const emit = defineEmits(['newTitle'])
 onMounted(() => {
-  emit('newTitle', 'EmptyView')
+  emit('newTitle', 'About')
 })
 </script>
 
 <template>
   <div>
-    <h1>This is an Empty View</h1>
+    <h1 class="text-5xl">Who we are.</h1>
   </div>
 </template>

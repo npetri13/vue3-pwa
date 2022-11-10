@@ -14,10 +14,8 @@ onMounted(() => {
   .then((res) => res.json())
   .then((json) => { homeContent.value = json })
   .catch((error) => console.log(error))
-
   emit('newTitle', "Home")
 
-  console.log("HomeView mounted.")
 })
 
 </script>
