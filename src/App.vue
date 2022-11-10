@@ -11,22 +11,22 @@ const changeTitle = (s: string) => { title.value = s }
 </script>
 
 <template>
+  <div id="app-container">
+    <header>
+      <div>
+        <h1 class="font-bold text-zinc-600">{{ title }}</h1>
+      </div>
+      <div>
+        <InfoButton type='blue'/>
+      </div>
+    </header>
 
-  <header class="flex justify-between">
-    <div>
-      <h1>{{ title }}</h1>
-    </div>
-    <div>
-      <InfoButton type='blue'/>
-    </div>
-  </header>
+    <main>
+      <RouterView @newTitle="changeTitle" />
+    </main>
 
-  <main class="py-12">
-    <RouterView @newTitle="changeTitle" />
-  </main>
-
-  <footer>
-    <Tabs/>
-  </footer>
-  
-  </template>
+    <footer class="py-4 border-t border-zinc-400">
+      <Tabs/>
+    </footer>
+  </div>  
+</template>
