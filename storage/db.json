@@ -1,4 +1,14 @@
 {
+  "jobs": [
+    { "id" : 1, "title" : "Junior Web Developer m/f/d", "salary" : "48k - 50k",
+      "description" : "For our venture foobar we are looking for a Junior Web Developer*in for our location in Berlin. Either you already have experience in our frameworks and tools, or are eager to learn. We currently use: React Native, PHP 7, Laravel, GitHub, Vapor, AWS, Firebase, Bitrise, Honeybadger, Papertrail."},
+      { "id" : 2, "title" : "Web Developer m/f/d", "salary" : "50k - 65k",
+      "description" : "Flat hierarchies and short decision-making paths characterize our work and make us agile. You'll work closely with the Product Owner and our development team in agile methodology to understand our guests' needs, map them online, and make them purchasable. For this you use common tools like Jira and Git/GitHub."},
+      { "id" : 3, "title" : "Senior Frontend Developer m/f/d", "salary" : "55k - 85k",
+      "description" : "Either you already have experience in our frameworks and tools, or are eager to learn. We currently use: Vue.js, Vuex, JavaScript, Swift (iOS), Sass, Git, Firebase, Bitrise, Cypress Frontend Tests."},
+      { "id" : 4, "title" : "Junior Frontend Developer m/f/d", "salary" : "45k - 48k",
+      "description" : "Want to kick start your career in software development? We are hiring Junior Developers for positions in Columbus, OH starting January 23, 2023! This is a job opportunity to get started developing cutting edge applications within Central Ohio. Responsive Web Design Gherkin Acceptance Test Driven Development SQL Server AngularJS React JavaScript Bootstrap, etc."}
+  ],
   "articles": [
     {
       "id": 1, "title": "Who was Bleeding Gums Murphy", "author": "Lisa Simpson", 

@@ -5,7 +5,7 @@ import { useDebounceFn } from '@vueuse/core';
 const emit = defineEmits(['newTitle'])
 
 const query = ref<string>("")
-const jobs = ref<string[]>([])
+const jobs = ref<{id: number, title: string, salary: string, description: string}[]>([])
 
 onMounted(() => {
   emit('newTitle', 'Jobs')
@@ -14,7 +14,15 @@ onMounted(() => {
 watch(query, () => fetchJobs())
 
 const fetchJobs = useDebounceFn(() => {
-  console.log(query.value)
+
+  fetch(`http://localhost:3001/jobs?q=${query.value}`)
+    .then(res => res.json())
+    .then(json => {
+      console.log(json)
+      jobs.value = json
+    })
+    .catch(e => {console.log(e)})
+
 }, 1000)
 
 </script>
@@ -32,6 +40,14 @@ const fetchJobs = useDebounceFn(() => {
         name="job-search"
       >
     </form>
+
+    <hr class="my-5" v-if="jobs.length > 0">
+    <div v-for="job in jobs" :key="job.id">
+      <p>
+        {{ job.title }}
+        <span class="px-2 py-1 text-xs font-bold text-white bg-indigo-500 rounded-full">{{ job.salary }}</span>
+      </p>
+    </div>
 
   </div>
 </template>
