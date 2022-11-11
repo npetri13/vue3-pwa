@@ -1,25 +1,18 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { RouterView } from "vue-router"
-import InfoButton from "@/components/InfoButton.vue"
+import TopBar from "@/components/TopBar.vue"
 import Tabs from "@/components/Tabs.vue"
 
-let title = ref('')
-
+const title = ref<string>('')
 const changeTitle = (s: string) => { title.value = s }
 
 </script>
 
 <template>
-  <div id="app-container">
-    <header>
-      <div>
-        <h1 class="font-bold text-zinc-600">{{ title }}</h1>
-      </div>
-      <div>
-        <InfoButton type='blue'/>
-      </div>
-    </header>
+  <div id="app-container" class="relative overflow-hidden">
+
+    <TopBar :title="title" />
 
     <main>
       <RouterView @newTitle="changeTitle" />
