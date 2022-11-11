@@ -2,7 +2,7 @@
 import { onMounted, ref, watch } from 'vue';
 // @ts-ignore
 import { useDebounceFn } from '@vueuse/core';
-import JobListDescriptionVue from './JobListDescription.vue';
+import JobListDescriptionVue from '../components/JobListDescription.vue';
 
 const emit = defineEmits(['newTitle'])
 
@@ -24,10 +24,7 @@ const fetchJobs = useDebounceFn(() => {
   }
   fetch(url)
     .then(res => res.json())
-    .then(json => {
-      console.log(json)
-      jobs.value = json
-    })
+    .then(json => { jobs.value = json })
     .catch(e => {console.log(e)})
 
 }, 1000)

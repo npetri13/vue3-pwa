@@ -18,7 +18,7 @@ const changeTitle = (s: string) => { title.value = s }
       <RouterView @newTitle="changeTitle" />
     </main>
 
-    <footer class="py-4 border-t border-zinc-400">
+    <footer>
       <Tabs/>
     </footer>
   </div>  

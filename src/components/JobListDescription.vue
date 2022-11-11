@@ -8,9 +8,7 @@ defineProps({
 const show = ref<boolean>(false)
 const title = ref<string>("more ...")
 
-watch(title, (title) => {
-  title = show ? 'less...' : 'more ...'
-})
+watch(show, () => { title.value = show.value ? 'less...' : 'more ...' })
 
 </script>
 
