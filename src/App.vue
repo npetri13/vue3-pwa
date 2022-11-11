@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { RouterView } from "vue-router"
 import TopBar from "@/components/TopBar.vue"
-import Tabs from "@/components/Tabs.vue"
+import Tabs from "@/components/BottomBar.vue"
 
 const title = ref<string>('')
 const changeTitle = (s: string) => { title.value = s }

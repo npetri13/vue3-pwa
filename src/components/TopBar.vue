@@ -26,7 +26,7 @@ const clicked = () => { showMenu.value = true }
         <BurgerButton @click="clicked" />
       </div>
       <div>
-        <h1 class="font-bold text-zinc-600">{{ title }}</h1>
+        <span class="font-bold text-zinc-600">{{ title }}</span>
       </div>
       <div>
         <InfoButton type='blue'/>
