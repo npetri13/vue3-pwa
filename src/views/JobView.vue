@@ -2,12 +2,15 @@
 import { onMounted, ref, watch } from 'vue';
 // @ts-ignore
 import { useDebounceFn } from '@vueuse/core';
+import JobListDescriptionVue from './JobListDescription.vue';
+
 const emit = defineEmits(['newTitle'])
 
 const query = ref<string>("")
 const jobs = ref<{id: number, title: string, salary: string, description: string}[]>([])
 
 onMounted(() => {
+  fetchJobs()
   emit('newTitle', 'Jobs')
 })
 
@@ -15,7 +18,11 @@ watch(query, () => fetchJobs())
 
 const fetchJobs = useDebounceFn(() => {
 
-  fetch(`http://localhost:3001/jobs?q=${query.value}`)
+  let url: string  = "http://localhost:3001/jobs"
+  if (query.value.length > 0) {
+    url = url + `?q=${query.value}`
+  }
+  fetch(url)
     .then(res => res.json())
     .then(json => {
       console.log(json)
@@ -42,12 +49,19 @@ const fetchJobs = useDebounceFn(() => {
     </form>
 
     <hr class="my-5" v-if="jobs.length > 0">
-    <div v-for="job in jobs" :key="job.id">
-      <p>
-        {{ job.title }}
-        <span class="px-2 py-1 text-xs font-bold text-white bg-indigo-500 rounded-full">{{ job.salary }}</span>
-      </p>
-    </div>
+    <div class="pl-3" v-for="job in jobs" :key="job.id">
+      <div class="py-4">
 
+        <div class="flex items-center gap-x-2">
+          <span>{{ job.title }}</span>
+          <span class="px-2 py-1 text-xs font-bold text-indigo-900 bg-indigo-200 rounded-full">{{ job.salary }}</span>
+        </div>
+        <div>
+          <JobListDescriptionVue :description="job.description"/>
+        </div>
+      </div>
+    
+      <hr/>
+    </div>
   </div>
 </template>

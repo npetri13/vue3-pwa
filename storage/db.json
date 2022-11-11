@@ -1,13 +1,21 @@
 {
   "jobs": [
-    { "id" : 1, "title" : "Junior Web Developer m/f/d", "salary" : "48k - 50k",
+      {"id" : 1, "title" : "Junior Web Developer m/f/d", "salary" : "48k - 50k",
       "description" : "For our venture foobar we are looking for a Junior Web Developer*in for our location in Berlin. Either you already have experience in our frameworks and tools, or are eager to learn. We currently use: React Native, PHP 7, Laravel, GitHub, Vapor, AWS, Firebase, Bitrise, Honeybadger, Papertrail."},
       { "id" : 2, "title" : "Web Developer m/f/d", "salary" : "50k - 65k",
       "description" : "Flat hierarchies and short decision-making paths characterize our work and make us agile. You'll work closely with the Product Owner and our development team in agile methodology to understand our guests' needs, map them online, and make them purchasable. For this you use common tools like Jira and Git/GitHub."},
       { "id" : 3, "title" : "Senior Frontend Developer m/f/d", "salary" : "55k - 85k",
       "description" : "Either you already have experience in our frameworks and tools, or are eager to learn. We currently use: Vue.js, Vuex, JavaScript, Swift (iOS), Sass, Git, Firebase, Bitrise, Cypress Frontend Tests."},
       { "id" : 4, "title" : "Junior Frontend Developer m/f/d", "salary" : "45k - 48k",
-      "description" : "Want to kick start your career in software development? We are hiring Junior Developers for positions in Columbus, OH starting January 23, 2023! This is a job opportunity to get started developing cutting edge applications within Central Ohio. Responsive Web Design Gherkin Acceptance Test Driven Development SQL Server AngularJS React JavaScript Bootstrap, etc."}
+      "description" : "Want to kick start your career in software development? We are hiring Junior Developers for positions in Columbus, OH starting January 23, 2023! This is a job opportunity to get started developing cutting edge applications within Central Ohio. Responsive Web Design Gherkin Acceptance Test Driven Development SQL Server AngularJS React JavaScript Bootstrap, etc."},
+      {"id" : 5, "title" : "Vue Frontend Developer E-Commerce m/f/d", "salary" : "48k - 50k",
+      "description" : "Our client is a renowned company in Germany, which stands for quality and innovation. Through its broad, cross-industry clientele, it knows the challenges that companies face today and in the future. Vue.js, React, Typscript"},
+      { "id" : 6, "title" : "Senior React Native Developer w/f/d ", "salary" : "65k - 68k",
+      "description" : "You feel at home in the world of digital trends and love to create relevant content? Then become part our IBM iX team! We are looking for you for the locations Berlin and Erfurt! You have basic experience in native iOS or Android app development. You have a good understanding of CI/CD and tool like Bitrise, Jenkins."},
+      { "id" : 7, "title" : "Senior iOS Engineer m/f/d", "salary" : "75k - 85k",
+      "description" : "If you breathe design, love creating new ideas, and are an outstanding team player, this position is for you. A Tech-related bachelor's degree or equivalent. Years of experience developing native iOS applications. Great experience working with Swift & Objective-C. A great understanding and hands on experience with unit testing Deep understanding of Core Graphics. Experience in Core Animation (beyond simple animations) is a plus Expertise in UIKit"},
+      { "id" : 8, "title" : "DevOps Engineer m/f/d", "salary" : "51k - 53k",
+      "description" : "Want to kick start your career in software development? We are hiring Junior Developers for positions in Columbus, OH starting January 23, 2023! This is a job opportunity to get started developing cutting edge applications within Central Ohio. GitLab GitHub "}
   ],
   "articles": [
     {
