@@ -4,6 +4,8 @@ import MenuButton from "@/components/MenuButton.vue"
 import IconUnsplash from "@/components/icons/IconUnsplash.vue"
 import IconHome from "@/components/icons/IconHome.vue"
 import IconAbout from "@/components/icons/IconAbout.vue"
+import IconWork from "@/components/icons/IconWork.vue"
+
 </script>
 
 <template>
@@ -12,6 +14,12 @@ import IconAbout from "@/components/icons/IconAbout.vue"
       <MenuButton>
         <template v-slot:icon><IconHome /></template>
         Home
+      </MenuButton>
+    </RouterLink>
+    <RouterLink to="/jobs">
+      <MenuButton>
+        <template v-slot:icon><IconWork /></template>
+        Jobs
       </MenuButton>
     </RouterLink>
     <RouterLink to="/unsplash">
