@@ -10,6 +10,21 @@ const query = ref<string>("")
 const jobs = ref<{id: number, title: string, salary: string, description: string}[]>([])
 
 onMounted(() => {
+
+  fetch("/agtoken",
+  {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json;charset=UTF-8',
+      'Access-Control-Allow-Origin': '*',
+      'client_id' : 'c003a37f-024f-462a-b36d-b001be4cd24a',
+      'client_secret' : '32a39620-32b3-4307-9aa1-511e3d7f48a8',
+      'grant_type' : 'client_credentials'
+    },
+  })
+  .then(res => console.log(res))
+  .catch(err => console.log(err))
+
   fetchJobs()
   emit('newTitle', 'Jobs')
 })
@@ -17,6 +32,8 @@ onMounted(() => {
 watch(query, () => fetchJobs())
 
 const fetchJobs = useDebounceFn(() => {
+
+  return
 
   let url: string  = "http://localhost:3001/jobs"
   if (query.value.length > 0) {
