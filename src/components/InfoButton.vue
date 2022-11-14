@@ -42,8 +42,8 @@ watch(open, async (nv) => {
     <div
       class="
       bg-zinc-100 rounded-tl-xl rounded-tr-xl border border-zinc-200
-        fixed -ml-[21rem] left-1/2
-        w-[42rem] h-[90%]
+        fixed left-1/2 -translate-x-1/2
+        max-w-[42rem] w-full h-[90%]
         transition-all"
       :class="{'top-[10%]': open, 'top-[100%]': !open}">
       <div class="flex justify-between p-5 border-b border-zinc-200">
