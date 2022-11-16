@@ -34,5 +34,6 @@ input[type="range"] {
     border-radius: 10px;
     background-image: linear-gradient(to right, #10b981, #10b981);
     background-size: 0% 0%; background-repeat: no-repeat;
+    cursor: pointer;
 }
 </style>

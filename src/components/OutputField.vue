@@ -1,7 +1,8 @@
 <template>
     <div class="flex items-center justify-between p-2 text-base text-white rounded bg-slate-700">
         <div>{{ output }}</div>
-        <IconFiles class="h-5" @click="copy" v-if="copyAvailable"/>
+        <IconFiles  class="h-5 transition-colors cursor-pointer hover:text-emerald-500"
+                    @click="copy" v-if="copyAvailable"/>
         <IconCheck class="h-5" v-if="!copyAvailable"/>
     </div>
 </template>

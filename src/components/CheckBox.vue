@@ -1,10 +1,10 @@
 <template>
 <div class="flex flex-row items-center my-1">
     <div class="relative">
-        <input class="!border-0 !outline-none form-checkbox !ring-0 focus:ring-offset-0 text-emerald-600 rounded"
-        type="checkbox" :name="name" v-model="value"/>
+        <input class="!border-0 !outline-none form-checkbox !ring-0 focus:ring-offset-0 text-emerald-600 rounded cursor-pointer"
+        type="checkbox" :name="name" v-model="value" :id="name" />
     </div>
-    <label class="ml-3 text-sm font-bold text-white" :for="name"><slot /></label>
+    <label class="ml-3 text-sm font-bold text-white cursor-pointer select-none" :for="name"><slot /></label>
 </div>
 
 </template>

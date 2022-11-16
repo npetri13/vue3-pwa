@@ -8,9 +8,9 @@
         <OutputField :output="password" />
         
         <div class="my-3">
-          <div class="flex items-center justify-between text-sm text-white">
+          <div class="inline-flex items-center justify-start text-sm text-white gap-x-3 px-2.5 py-0.5 rounded-full bg-slate-800">
             <div>Password Length</div>
-            <div class="text-xs font-bold">{{ passwordLength }}</div>
+            <div>{{ passwordLength }}</div>
           </div>
           <RangeField v-model="passwordLength" :min=5 :max=12 />
           <div class="my-2">
