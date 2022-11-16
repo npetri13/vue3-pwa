@@ -1,30 +1,66 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
-import { useAppStore } from "@/stores/app";
+import RealoadButton from '@/components/RealoadButton.vue';
 
-type Article = {
-  id: Number,
-  title: String,
-  body: String
+const catFact = ref<{ fact: string, length: number }>({fact: "", length: 0})
+const todaysActivity = ref<string>("")
+const uriPicOfTheDay = ref<string>("")
+
+const emit = defineEmits(['newTitle'])
+
+const fetchActivity = () => {
+  fetch("http://www.boredapi.com/api/activity?type=education")
+  .then(res => res.json())
+  .then((json) => { todaysActivity.value = json.activity })
+  .catch(err => {})
 }
-let homeContent = ref<Article>()
-let appModel = useAppStore()
+
+const fetchCatFact = () => {
+  fetch("https://catfact.ninja/fact")
+  .then(res => res.json())
+  .then((json) => { catFact.value = json })
+  .catch(err => {})
+}
+
+const fetchPicOfTheDay = () => {
+  fetch("https://dog.ceo/api/breeds/image/random")
+  .then(res => res.json())
+  .then(json => uriPicOfTheDay.value = (<string> json.message))
+  .catch(err => {})
+}
 
 onMounted(() => {
 
-  appModel.viewName = "Home"
+  fetchCatFact()
+  fetchActivity()
+  fetchPicOfTheDay()
 
-  fetch("http://localhost:3001/articles/1")
-  .then((res) => res.json())
-  .then((json) => { homeContent.value = json })
-  .catch((error) => console.log(error))
+  emit('newTitle', "Home")
 })
 
 </script>
 
 <template>
-  <div class="h-full px-3 overflow-x-hidden overflow-y-auto">
-    <h1 class="py-4 text-5xl font-bold text-zinc-500">{{ homeContent?.title }}</h1>
-    <article class="article" v-html="homeContent?.body"></article>
+  <div class="px-2">
+    <h1>Welcome Home!</h1>
+
+    <h4 class="has-reload-button">
+      Today's Cat Fact!
+      <RealoadButton class="h-5" :onClick=fetchCatFact />
+    </h4>
+    <p>{{ catFact.fact }}</p>
+
+    <h4 class="has-reload-button">
+      Today's Learning Goals!
+      <RealoadButton class="h-5" :onClick=fetchActivity />
+    </h4>
+    <p>{{ todaysActivity }}</p>
+
+    <h4 class="has-reload-button">
+      Picture Of The Day!
+      <RealoadButton class="h-5" :onClick=fetchPicOfTheDay />
+    </h4>
+    <p class="center"><img class="rounded-xl" :src="uriPicOfTheDay" alt="Picture of the Day"></p>
+
   </div>
 </template>

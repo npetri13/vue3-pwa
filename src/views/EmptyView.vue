@@ -1,14 +1,10 @@
 <script setup lang="ts">
 import { onMounted } from 'vue';
-import { useAppStore } from '@/stores/app';
-
-let appModel = useAppStore()
-
+const emit = defineEmits(['newTitle'])
 onMounted(() => {
-  appModel.viewName = "Empty View"
+  emit('newTitle', 'EmptyView')
 })
 </script>
-
 
 <template>
   <div>

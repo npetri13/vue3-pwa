@@ -2,10 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body {@apply h-screen;}
-#app {@apply max-w-2xl mx-auto h-full;}
-main {@apply h-full;}
-header {@apply fixed top-0 bg-zinc-100 px-4 py-2 w-full max-w-2xl mx-auto;}
-footer {@apply fixed bottom-0 bg-zinc-100 px-4 py-2 w-full max-w-2xl mx-auto;}
+@layer base {
+    html, body {@apply h-screen;}
+    #app {@apply max-w-2xl mx-auto h-screen border border-slate-200;}
+    #app-container {@apply flex h-screen flex-col;}
 
-article.article p {@apply my-5;}
+    header { @apply flex justify-between py-3 px-3 border-b border-slate-200; }
+    main { @apply py-2 h-full flex-grow overflow-y-auto; }
+    footer { @apply py-3 px-10 border-t border-slate-200; }
+
+    h1 { @apply my-4 text-5xl font-bold text-zinc-500;}
+    h2 { @apply my-4 text-4xl font-bold text-zinc-500;}
+    h3 { @apply my-4 text-3xl font-bold text-zinc-500;}
+    h4 { @apply my-4 text-2xl font-bold text-zinc-500;}
+    p { @apply my-2 text-zinc-800;}
+
+    article.article p {@apply my-5;}
+}
+@layer components {
+    .has-reload-button {@apply flex items-center justify-start gap-x-2;}
+    .mobile-menu a {@apply text-xl font-bold text-blue-500 uppercase transition-colors border-b-2 border-b-transparent hover:text-blue-600 hover:border-b-blue-600;}
+}
