@@ -5,6 +5,7 @@ import IconUnsplash from "@/components/icons/IconUnsplash.vue"
 import IconHome from "@/components/icons/IconHome.vue"
 import IconAbout from "@/components/icons/IconAbout.vue"
 import IconWork from "@/components/icons/IconWork.vue"
+import IconPassword from "@/components/icons/IconPassword.vue"
 
 </script>
 
@@ -26,6 +27,12 @@ import IconWork from "@/components/icons/IconWork.vue"
       <MenuButton>
         <template v-slot:icon><IconUnsplash /></template>
         Unsplash
+      </MenuButton>
+    </RouterLink>
+    <RouterLink to="/passwordgen">
+      <MenuButton>
+        <template v-slot:icon><IconPassword /></template>
+        Password
       </MenuButton>
     </RouterLink>
     <RouterLink to="/about">
