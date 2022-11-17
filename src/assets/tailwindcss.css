@@ -18,6 +18,7 @@
     h5 { @apply my-2 text-lg font-bold text-slate-500;}
     h4 { @apply my-2 text-base uppercase font-bold text-slate-500;}
     p { @apply my-2 text-zinc-800;}
+    a { @apply text-blue-600 hover:text-blue-800 transition-colors;}
 
     article.article p {@apply my-5;}
 }

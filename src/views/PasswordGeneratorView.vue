@@ -1,26 +1,34 @@
 <template>
   <div class="flex flex-col h-full">
     <div class="flex items-center justify-center h-full">
-      <div class="p-5 rounded shadow-xl shadow-slate-400 bg-slate-900 w-[300px]">
+      
+      <div class="flex flex-col">
+        <div class="p-5 rounded shadow-xl shadow-slate-400 bg-slate-900 w-[300px]">
 
-        <div class="p-2 my-2 font-bold text-center text-gray-100">Password Generator</div>
+          <div class="p-2 my-2 font-bold text-center text-gray-100">Password Generator</div>
 
-        <OutputField :output="password" />
-        
-        <div class="my-3">
-          <div class="inline-flex items-center justify-start text-sm text-white gap-x-3 px-2.5 py-0.5 rounded-full bg-slate-800">
-            <div>Password Length</div>
-            <div>{{ passwordLength }}</div>
-          </div>
-          <RangeField v-model="passwordLength" :min=5 :max=12 />
-          <div class="my-2">
-            <CheckBox name="uppercase" v-model="includeUppercase">Include Uppercase</CheckBox>
-            <CheckBox name="numbers" v-model="includeNumbers">Include Numbers</CheckBox>
-            <CheckBox name="symbols" v-model="includeSymbols">Include Symbols</CheckBox>
-            <StrengthField :value="password"/>
+          <OutputField :output="password" />
+          
+          <div class="my-3">
+            <div class="inline-flex items-center justify-start text-sm text-white gap-x-3 px-2.5 py-0.5 rounded-full bg-slate-800">
+              <div>Password Length</div>
+              <div>{{ passwordLength }}</div>
+            </div>
+            <RangeField v-model="passwordLength" :min=5 :max=12 />
+            <div class="my-2">
+              <CheckBox name="uppercase" v-model="includeUppercase">Include Uppercase</CheckBox>
+              <CheckBox name="numbers" v-model="includeNumbers">Include Numbers</CheckBox>
+              <CheckBox name="symbols" v-model="includeSymbols">Include Symbols</CheckBox>
+              <StrengthField :value="password"/>
+            </div>
           </div>
         </div>
+        <div class="mt-4 text-xs text-slate-600">This is small app is inspired by 
+          <a href="https://www.frontendmentor.io/challenges/password-generator-app-Mr8CLycqjh" target="_blank">frontendmentor.io</a>.</div>
       </div>
+
+
+
     </div>
   </div>
 </template>
