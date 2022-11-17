@@ -39,22 +39,16 @@ onMounted(() => {
   emit('newTitle', "Home")
 })
 
-const reload = () => { console.log('Event Relaod Quote') }
-
 </script>
 
 <template>
   <div class="px-6">
     <h1>Welcome Home!</h1>
 
-    <Quote title="Todays Cat Fact!" :quote=catFact.fact @reload="reload" />
-
-    <h4 class="has-reload-button">
-      Today's Learning Goals!
-      <RealoadButton class="h-5" :onClick=fetchActivity />
-    </h4>
-    <p>{{ todaysActivity }}</p>
-
+    <div class="space-y-5">
+      <Quote title="Todays Cat Fact!" :quote=catFact.fact :onClick="fetchCatFact" />
+      <Quote title="Today's Learning Goals!" :quote=todaysActivity :onClick="fetchActivity" />
+    </div>
     <h4 class="has-reload-button">
       Picture Of The Day!
       <RealoadButton class="h-5" :onClick=fetchPicOfTheDay />
