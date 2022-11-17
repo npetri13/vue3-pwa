@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { RouterLink } from "vue-router"
-import MenuButton from "@/components/MenuButton.vue"
+import MenuButton from "@/components/app/MenuButton.vue"
 import IconUnsplash from "@/components/icons/IconUnsplash.vue"
 import IconHome from "@/components/icons/IconHome.vue"
 import IconAbout from "@/components/icons/IconAbout.vue"

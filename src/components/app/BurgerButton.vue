@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import IconBurger from "./icons/IconBurger.vue"
+import IconBurger from "../icons/IconBurger.vue"
 </script>
 
 <template>

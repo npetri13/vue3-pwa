@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import IconInfoCircle from "./icons/IconInfoCircle.vue"
-import IconXCircleFill from "./icons/IconXCircleFill.vue"
+import IconInfoCircle from "../icons/IconInfoCircle.vue"
+import IconXCircleFill from "../icons/IconXCircleFill.vue"
 import { ref, reactive, watch } from 'vue'
 
 type IconType = 'blue' | 'red'

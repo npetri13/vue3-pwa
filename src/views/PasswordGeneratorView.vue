@@ -27,10 +27,10 @@
 
 <script setup lang="ts">
 import { onMounted, ref, watch } from 'vue'
-import RangeField from '@/components/RangeField.vue'
-import CheckBox from '@/components/CheckBox.vue'
-import StrengthField from '@/components/StrengthField.vue'
-import OutputField from '@/components/OutputField.vue'
+import RangeField from '@/components/passwordgeneratorview/RangeField.vue'
+import CheckBox from '@/components/passwordgeneratorview/CheckBox.vue'
+import StrengthField from '@/components/passwordgeneratorview/StrengthField.vue'
+import OutputField from '@/components/passwordgeneratorview/OutputField.vue'
 
 const emit = defineEmits(['newTitle'])
 onMounted(() => {

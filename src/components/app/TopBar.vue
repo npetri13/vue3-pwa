@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue"
-import InfoButton from "@/components/InfoButton.vue"
-import BurgerButton from "@/components/BurgerButton.vue"
+import InfoButton from "@/components/app/InfoButton.vue"
+import BurgerButton from "@/components/app/BurgerButton.vue"
 
 const showMenu = ref<boolean>(false)
 defineProps<{ title?: string }>()
