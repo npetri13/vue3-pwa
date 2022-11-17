@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import RealoadButton from '@/components/RealoadButton.vue';
+import Quote from '@/components/Quote.vue'
 
 const catFact = ref<{ fact: string, length: number }>({fact: "", length: 0})
 const todaysActivity = ref<string>("")
@@ -38,17 +39,15 @@ onMounted(() => {
   emit('newTitle', "Home")
 })
 
+const reload = () => { console.log('Event Relaod Quote') }
+
 </script>
 
 <template>
-  <div class="px-2">
+  <div class="px-6">
     <h1>Welcome Home!</h1>
 
-    <h4 class="has-reload-button">
-      Today's Cat Fact!
-      <RealoadButton class="h-5" :onClick=fetchCatFact />
-    </h4>
-    <p>{{ catFact.fact }}</p>
+    <Quote title="Todays Cat Fact!" :quote=catFact.fact @reload="reload" />
 
     <h4 class="has-reload-button">
       Today's Learning Goals!
