@@ -23,6 +23,5 @@
     article.article p {@apply my-5;}
 }
 @layer components {
-    .has-reload-button {@apply flex items-center justify-start gap-x-2;}
     .mobile-menu a {@apply text-xl font-bold text-blue-500 uppercase transition-colors border-b-2 border-b-transparent hover:text-blue-600 hover:border-b-blue-600;}
 }
