@@ -11,7 +11,7 @@ const clicked = () => { showMenu.value = true }
 
 <template>
     <div 
-      class="absolute top-0 left-0 w-full h-screen p-5 pl-20 pr-4 transition-transform border-r bg-white/60 backdrop-blur border-r-slate-300"
+      class="absolute top-0 left-0 z-50 w-full h-screen p-5 pl-20 pr-4 transition-transform border-r bg-white/60 backdrop-blur border-r-slate-300"
       :class="showMenu? '-translate-x-16' : '-translate-x-full'"
       @click="showMenu = false"
     >
