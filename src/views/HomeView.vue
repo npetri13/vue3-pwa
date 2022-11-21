@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-import RealoadButton from '@/components/RealoadButton.vue';
+import { ref, onMounted } from 'vue'
+import RealoadButton from '@/components/RealoadButton.vue'
 import Quote from '@/components/Quote.vue'
+import BTCRate from '@/components/BTCRate.vue'
 
 const catFact = ref<{ fact: string, length: number }>({fact: "", length: 0})
 const todaysActivity = ref<string>("")
@@ -43,7 +44,10 @@ onMounted(() => {
 
 <template>
   <div class="px-6">
-    <h1>Welcome Home!</h1>
+    <div class="flex items-center justify-between">
+      <h1>Welcome Home!</h1>
+      <BTCRate />
+    </div>
 
     <div class="space-y-5">
       <Quote title="Todays Cat Fact!" :quote=catFact.fact :onClick="fetchCatFact" />
